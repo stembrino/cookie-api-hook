@@ -7,5 +7,5 @@ services:
       dockerfile: Dockerfile
     container_name: cookie-hook
     ports:
-      - "3000:3000" # Expose your Fastify app port
+      - "3003:3003" # Expose your Fastify app port
     command: yarn start
