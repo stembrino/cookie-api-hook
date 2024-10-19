@@ -1,7 +1,5 @@
 # cookie-api-hook
 
-![Logo](https://your-logo-url.com/logo.png) <!-- Optional: Add your logo here -->
-
 ## Overview
 
 `cookie-api-hook` is a Fastify-based API that integrates with the [clipboard-curl-cookie](https://github.com/stembrino/clipboard-curl-cookie) Chrome plugin. This application allows users to easily extract cookies from their browser and send them to the API, making it a powerful tool for integration with API testing tools like Insomnia or Postman.
