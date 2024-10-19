@@ -1,4 +1,5 @@
 import Fastify from "fastify";
+import { registerRoutes } from "./routesRegister";
 // import { writeFile, readFile } from "fs-extra";
 // import path from "path";
 
@@ -42,6 +43,7 @@ fastify.get("/check", (request, reply) => {
 // Start the server
 const start = async () => {
   try {
+    await registerRoutes(fastify);
     await fastify.listen({ port: 3000 });
     fastify.log.info("Server running at http://localhost:3000");
   } catch (err) {
