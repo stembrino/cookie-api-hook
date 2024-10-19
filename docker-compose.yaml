@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  fastify-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cookie-hook
+    ports:
+      - "3000:3000" # Expose your Fastify app port
+    command: yarn start

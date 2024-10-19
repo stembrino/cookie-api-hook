@@ -1,17 +1,17 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import { QueryCookieDto } from "./dto/QueryCookieDTO";
 import { writeFile } from "fs/promises";
 import path from "path";
+import { CookieDto } from "./dto/CookieDto";
 
 const dataFilePath = path.join(__dirname, "../../data/cookie.json");
 
 export const cookieHandler = async (
-  request: FastifyRequest<{ Body: QueryCookieDto }>,
+  request: FastifyRequest<{ Body: CookieDto }>,
   reply: FastifyReply,
 ) => {
-  const { value } = request.body;
+  const { key, cookie } = request.body;
   try {
-    await writeFile(dataFilePath, JSON.stringify({ cookie: value }));
+    await writeFile(dataFilePath, JSON.stringify({ key, cookie }));
     reply.status(200).send({
       success: true,
     });
