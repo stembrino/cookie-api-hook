@@ -1,6 +1,7 @@
 import { FastifyInstance } from "fastify";
-import { cookieHandler } from "./cookieController";
+import { cookieGetHandler, cookiePostHandler } from "./cookieController";
 
 export const cookieRoutes = (server: FastifyInstance) => {
-  server.post("/", cookieHandler);
+  server.post("/", cookiePostHandler);
+  server.get("/", cookieGetHandler);
 };
